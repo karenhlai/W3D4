@@ -1,7 +1,8 @@
 class Response < ApplicationRecord
+  before_validation :not_duplicate_response
   validates :user_id, presence: true
   validates :answer_choice_id, presence: true
-  validate :not_duplicate_response
+  validate 
 
     belongs_to :respondent,
     primary_key: :id,  
